@@ -1,6 +1,6 @@
 programa
 {
-	inclua biblioteca Matematica --> math
+	inclua biblioteca Matematica --> math
 	
 	funcao inicio()
 	{
@@ -16,7 +16,7 @@ programa
 	 R = (A + B )
 	 R = math.potencia(R, 2)
 	 
-	 S = (A + B )
+	 S = (B + C )
 	 S = math.potencia(S, 2)
 
 	 D = ( R + S ) / 2
@@ -30,7 +30,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 86; 
+ * @POSICAO-CURSOR = 255; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

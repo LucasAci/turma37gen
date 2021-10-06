@@ -1,3 +1,4 @@
+package Lista01;
 import java.util.Scanner;
 
 public class OiMundo {

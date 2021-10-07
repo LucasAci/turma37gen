@@ -2,7 +2,7 @@ package Lista03;
 
 import java.util.Scanner;
 
-public class Lista3ex04 {
+public class Lista03ex04 {
 
 	public static void main(String[] args) {
 
@@ -23,8 +23,8 @@ public class Lista3ex04 {
 		int idade;
 		char sexo; // (1-feminino / 2-masculino / 3-Outros)
 		char opcao; // (1,pessoa calma; 2, pessoa nervosa 3,pessoa agressiva)
-		int pessoasCalmas;
-		int mulheresNervorsas;
+		int pessoasCalmas = 0;
+		int mulheresNervorsas = 0;
 		int homensAfressivos;
 		int outrosCalmos;
 		int pessoasNervorsasAcina40Anos; // Por costume entendemos 40 para cima
@@ -41,10 +41,19 @@ public class Lista3ex04 {
 			sexo = leia.next().charAt(0);
 			System.out.println("Escolha: \n1-pessoa  calma; \n2-pessoa  nervosa \n3-pessoa agressiva");
 			opcao = leia.next().charAt(0);
-			//opcao = leia.next().charAt(0);
 			System.out.println("Continuar S/N: ");
 			op = leia.next().toUpperCase().charAt(0);
 			contadorHabitantes++;
+			if (opcao == '1') {
+				pessoasCalmas++;
+			}
+			if (sexo =='1' && opcao == '2') {
+				mulheresNervorsas++;
+			}
+			if (sexo == '2' && opcao == '2') {
+				
+			}
+	
 		}
 
 	}

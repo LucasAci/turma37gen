@@ -10,7 +10,7 @@ public class Ex6ContaBancaria {
 		ContaBancaria exemplo6 = new ContaBancaria();
 		
 		//ENTRADAS
-		exemplo6.titular = "Lauro";
+		exemplo6.titular = "Lucas";
 		exemplo6.cpf = "000.000.000-00";
 		exemplo6.saldo = 1200.00;
 		exemplo6.credito = 5000.00;

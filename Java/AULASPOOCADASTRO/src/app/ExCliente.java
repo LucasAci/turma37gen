@@ -24,7 +24,8 @@ public class ExCliente {
 		exemplo1.exibirCpf();
 		exemplo1.exibirContato();
 		
-		System.out.println("O cliente pagara como? digite 'D' para crédito 'C' ou 'E' para espécie: ");
+		//ENTRADA E SAÍDAS
+		System.out.println("O cliente pagara como? digite 'D' para débito, para crédito 'C' ou 'E' para espécie: ");
 		exemplo1.formaPagamento = leia.next().toUpperCase().charAt(0);
 		exemplo1.exibirPagamento();		
 		

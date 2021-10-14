@@ -1,6 +1,6 @@
 package Lista04;
 
-public class Lista04ex {
+public class ExLancamento {
 
 	public static void main(String[] args) {
 		

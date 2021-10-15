@@ -14,6 +14,7 @@ public class testeConta {
 		cc1.credito(100);
 		cc1.credito(50);
 		cc1.debito(10);
+		cc1.correcao(2);
 		
 	
 		System.out.println("Saldo Atual R$: "+cc1.getSaldo());

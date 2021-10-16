@@ -102,8 +102,14 @@ public class Carro {
 	}
 	
 	public void subirMarcha() {
-		if (this.ligado && this.marcha <= 6) {
+		if (this.ligado && this.marcha <= 5) {
 			this.marcha++;
+		}
+	}
+	
+	public void descerMarcha() {
+		if (this.ligado && this.marcha > 0) {
+			this.marcha--;
 		}
 	}
 	
@@ -123,6 +129,7 @@ public class Carro {
 			for (int x=0; x<this.velocidade; x++) {
 			this.velocidade--;
 			System.out.println("freiando...");
+			}
 		}
 	}
 	
@@ -136,7 +143,11 @@ public class Carro {
 	}
 	
 	public void pararCarro() {
-		if (this.ligado && this.velocidade=0.00 && this.marcha)
+		if (this.ligado && this.velocidade == 0.00 && this.marcha == 0) {
+			descerMarcha(); //reduzir a marcha até 1
+			
+			desligarCarro();
+		}
 	}
 	
 

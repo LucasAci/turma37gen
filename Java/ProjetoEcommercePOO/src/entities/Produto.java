@@ -58,7 +58,6 @@ public class Produto {
 
 	public void incluiEstoque(int quantidade) {
 		if (quantidade < 0) {
-
 			System.out.println("Quantidade negativa! Impossível realizar!");
 		} else {
 			this.estoque = this.estoque + quantidade;
@@ -67,7 +66,6 @@ public class Produto {
 
 	public void retiraEstoque(int quantidade) {
 		if (quantidade > estoque) {
-
 			System.out.println("Quantidade indisponivel");
 		} else {
 			this.estoque = this.estoque - quantidade;

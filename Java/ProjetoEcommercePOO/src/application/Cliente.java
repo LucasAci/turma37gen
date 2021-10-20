@@ -36,7 +36,7 @@ public class Cliente {
 		System.out.println("DESEJA FAZER COMPRAS EM NOSSO SITE? S/N]");
 		op = leia.next().toUpperCase();
 
-		if (op.equals("S")) {
+		if (op.equals("S")) { // Se for sim, começa a fazer a verificação, de acordo com o arreio de produtos
 			do {
 				System.out.println("CODIGO\t PRODUTO\t VALOR\t ESTOQUE\n");
 				for (Produto prod : vitrine) {

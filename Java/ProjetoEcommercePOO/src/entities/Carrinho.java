@@ -12,7 +12,7 @@ public class Carrinho {
 	private String codigo;
 	private double valor;
 	private int quantidade;
-	private double valorTotal;
+	private double valorTotal;  //varivel para atualizar o valor
 	
 	int atualizaQuantidade;
 	
@@ -86,12 +86,12 @@ public class Carrinho {
 		this.quantidade = quantidade;
 	}
 	
-	public Boolean verificaCarrinho(String codigo, int quantidade) {
-		for (Carrinho x : carrinho) {
+	public Boolean verificaCarrinho(String codigo, int quantidade) { // verifica se já eciste o código q eatá sendo passado no carrinho
+		for (Carrinho x : carrinho) {							//se sim, atualiza a quantidade, com o que já tinha
 			if(x.getCodigo().equals(codigo)) {
 					atualizaQuantidade =+ x.getQuantidade() + quantidade;
-					x.setQuantidade(atualizaQuantidade);
-					setValorTotal(atualizaQuantidade * x.getValor());
+					x.setQuantidade(atualizaQuantidade);     //atualiza o carrinho
+					setValorTotal(atualizaQuantidade * x.getValor()); 
 					atualizaQuantidade = 0;
 					return true;
 			}
@@ -107,7 +107,7 @@ public class Carrinho {
 			carrinho.add(new Carrinho(produto, codigo, valor, quantidade));
 			if(atualizaQuantidade != 0) {
 				double valorTotalCompra =+ getValorTotal() + (valor * atualizaQuantidade);
-				setValorTotal(valorTotalCompra);
+				setValorTotal(valorTotalCompra);    //set, atualiza o valor total da compra
 			} else {
 				double valorTotalCompra =+ getValorTotal() + (valor * quantidade);
 				setValorTotal(valorTotalCompra);
@@ -125,7 +125,7 @@ public class Carrinho {
 		else {
 			for (Carrinho x: carrinho) { 
 				System.out.printf("" + x.getQuantidade() + " x " + x.getProduto() + "\t Valor Unitario: " + x.getValor() + "\t Valor Total: " + (x.getQuantidade() * x.getValor()) + "\n");
-			}
+			}																													//mostra o valortal X quantidade
 		}
 	}
 	

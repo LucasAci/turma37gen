@@ -28,8 +28,9 @@ select * from tb_funcionarios where slario > 2000;
 
 use db_rh;
 
-update tb_funcionarios set salario =  10000.00 where id_funcionario = 1;
+update tb_funcionarios set salario =  10000.00 where id_funcionarios = 1;
 
+select * from tb_funcionarios;
     
     
     

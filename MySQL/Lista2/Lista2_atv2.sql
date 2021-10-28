@@ -1,56 +1,40 @@
-CREATE DATABASE db_pizzaria_legal;
+CREATE DATABASE db_pizzaria_legal ;
 
-USE db_pizzaria_legal;
+USE db_pizzaria_legal ;
 
 CREATE TABLE tb_categoria (
-id_categoria int auto_increment,
-tamanho enum ("Pequena" , "Media", "Grande"),
-tipo enum ("Salgada", "Doce"),
-primary key (id_categoria)
+	id_categoria INT AUTO_INCREMENT, 
+    tamanho ENUM('Pequena', 'Média', 'Grande'),
+    tipo ENUM('Salgada', 'Doce'),
+    PRIMARY KEY (id_categoria)
 );
-
-create TABLE tb_pizza (
-id_pizza int auto_increment,
-sabor varchar(255) not null,
-valor double not null,
-borda enum ("sim","nao"),
-fk_id_categoria int,
-primary key (id_pizza),
-foreign key (fk_id_categoria) references tb_categoria(id_categoria)
+CREATE TABLE tb_pizza (
+	id_pizza INT AUTO_INCREMENT,
+    sabor VARCHAR(255) NOT NULL,
+    borda ENUM('Catupiry', 'Cheddar', 'Sem Borda'),
+    recheio BOOLEAN NOT NULL, 
+    valor  DOUBLE NOT NULL,
+    fk_id_categoria INT,
+    PRIMARY KEY (id_pizza),
+    FOREIGN KEY (fk_id_categoria) REFERENCES tb_categoria(id_categoria)
 );
-
-insert into tb_categoria (tamanho, tipo) values
+INSERT INTO tb_categoria (tamanho, tipo) VALUES
 ("Pequena", "Salgada"),
-("Média", "Salgada"),
-("Grande", "Salgada"),
-("Pequena","Doce"),
-("Média","Doce"),
-("Grande","Doce");
+("Média", "Doce"),
+("Grande", "Salgada");
 
-insert into tb_pizza (sabor, valor, borda, fk_id_categoria) values
-("Mussarela", 40.00, "Não", 1),
-("Calabresa", 45.90, "Sim", 2),
-("Frango", 35.90, "sim", 3),
-("Moda da Casa", 70.00, 4),
-("Peperoni", 45.50, "Sim", 5),
-("Cartola", 25.70, "Não", 6);
+SELECT * FROM tb_categoria ;
+INSERT INTO tb_pizza (sabor, borda, recheio, valor, fk_id_categoria) VALUES
+("Calabresa", "Catupiry", 1, 10.50, 1),
+("Nordestina","Cheddar", 0, 65.00, 2),
+("Frango e Bacon","Cheddar", 1, 12.50, 3),
+("Peperoni","Catupiry", 0, 45.50, 3),
+("Cuz cuz", "Cheddar", 1, 12.50, 2),
+("Cartola", "Sem Borda", 0, 20.50, 1);
+SELECT * FROM tb_pizza ;
 
-select * from tb_pizza where valor > 45;
+SELECT * FROM tb_pizza WHERE valor > 45.00 ;
 
-select * from tb_pizza where valor between 20 and 60;
+SELECT * FROM tb_pizza WHERE valor > 29.00 AND valor < 60.00 ;
 
-select * from tb_pizza where sabor like "c%";
-
--- Faça um um select com Inner join entre  tabela categoria e pizza.
-select * from tb_categoria
-	inner join tb_pizza
-    on tb_pizza.fk_id_categoria = tb_categoria.id_categoria;
--- Faça um select onde traga todos os Produtos de uma categoria específica (exemplo todos os produtos que são pizza doce).    
-select * from tb_categoria
-	inner join tb_pizza
-    on tb_pizza.fk_id_categoria = tb_categoria.id_categoria 
-    where tb_categoria.tipo = "Doce"
-
-
-
-
+SELECT * FROM tb_pizza WHERE sabor LIKE 'c%' ;
